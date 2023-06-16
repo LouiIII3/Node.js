@@ -1,8 +1,10 @@
+/*필요한 모듈및 변수를 초기화*/
 var myArgs = process.argv.slice(2)
 var GPIO14_PATH = "/sys/class/gpio/gpio14/"
 var GPIO_SYSFS = "/sys/class/gpio/"
 var GPIO_NUMBER = 14
 
+/*GPIO 제어를 위한 writeGPIO 함수를 정의*/
 function writeGPIO( filename, value, path ) { 
     var fs = require('fs')
     try {
@@ -13,6 +15,7 @@ function writeGPIO( filename, value, path ) {
     }
 }
 
+/*명령줄 인수를 확인하고 해당하는 동작을 수행*/
 if (myArgs[0]==null){
     console.log("There is an incorrect number of arguments.");
     console.log("  Usage is: nodejs nodejsLED.js command")
@@ -20,6 +23,7 @@ if (myArgs[0]==null){
     process.exit(2)   //exits with the error c
 }
 
+/*명령에 따라 GPIO를 제어*/
 switch (myArgs[0]) { 
     case 'on':
         console.log("Turning the LED On")
