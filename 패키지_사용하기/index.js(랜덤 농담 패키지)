@@ -1,0 +1,9 @@
+//무슨 농담이(메소드) 있는지 확인할때 사용한다.
+const jokes = require("give-me-a-joke")
+console.dir(jokes)
+
+//농담들 중 getRandomDadJoke 사용하기
+const jokes = require("give-me-a-joke")
+jokes.getRandomDadJoke(function(joke1){
+    console.log(joke1);
+});
