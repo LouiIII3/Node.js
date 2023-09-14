@@ -1,1 +1,5 @@
+//만드는 방법
 npm init -y
+
+//만약에 구버전 npm에서 패키지를 package.json으로 저장 하는 경우 끝에 --save를 붙여 한다.
+npm install express --save
